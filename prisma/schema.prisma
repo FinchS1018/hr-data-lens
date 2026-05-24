@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Project {
+  id         Int         @id @default(autoincrement())
+  title      String
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  candidates Candidate[]
+}
+
+model Candidate {
+  id          Int                @id @default(autoincrement())
+  name        String
+  department  String
+  position    String
+  source      String?
+  recruiter   String?
+  offerResult String?
+  onboarded   Boolean?
+  projectId   Int
+  project     Project            @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  stages      RecruitmentStage[]
+  createdAt   DateTime           @default(now())
+}
+
+model RecruitmentStage {
+  id          Int       @id @default(autoincrement())
+  candidateId Int
+  candidate   Candidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  stageName   String
+  stageOrder  Int
+  result      String?
+  stageDate   String?
+  createdAt   DateTime  @default(now())
+}
