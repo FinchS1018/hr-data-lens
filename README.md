@@ -16,13 +16,25 @@
 ## 截图
 
 
-| 首页 | 看板 |
-|------|------|
-| ![首页](./screenshots/home.png) | ![看板](./screenshots/dashboard.png) |
+### 首页
+项目列表，创建和管理分析项目。
 
-| 阶段漏斗 | 源数据编辑 |
-|----------|-----------|
-| ![漏斗](./screenshots/funnel.png) | ![源数据](./screenshots/raw-data.png) |
+![首页](./screenshots/home.png)
+
+### 分析看板
+KPI 指标卡 + 月度趋势图 + 筛选器。
+
+![看板](./screenshots/dashboard.png)
+
+### 阶段衰减漏斗
+各阶段转化率可视化，一眼看出瓶颈环节。
+
+![漏斗](./screenshots/funnel.png)
+
+### 源数据编辑
+可编辑原始数据表格，修改实时生效。
+
+![源数据](./screenshots/raw-data.png)
 
 ## 本地运行
 
